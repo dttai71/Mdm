@@ -46,7 +46,7 @@ DevOps:
   - Telegram /v1/send for alerts (NQH-Ops-Team channel)
 ```
 
-**Final stack chốt** post 02-design ADR-001 by @architect + Quỳnh review.
+**Final stack chốt** in ADR-001 by @architect (CEO + em joint). Ms. Quỳnh implements per ratified design (NOT design participant per CEO 28/06).
 
 ---
 
@@ -130,7 +130,7 @@ DevOps:
 | Implementer | @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) | Code + DDL + deploy |
 | Reviewer | @cto MTClaw | PR review + design verify |
 | Governance | @mis | Decision Log + scope discipline |
-| Data Stewards | Thy · Quỳnh · Ms.Hồng | Master-data input/maintenance |
+| Data Stewards | Per MDP SOP roles: Thy (MDG-003) · Ms.Hồng (MDG-002) · KTT + Kế toán Kho (MDG-008/011) · Bếp trưởng (MDG-005) · Hào (MDG-012) · CFO Office (MDG-009) | per SPEC-004 RBAC matrix |
 | Cross-team | @cto BFlow | Sunset coordination |
 
 ---
