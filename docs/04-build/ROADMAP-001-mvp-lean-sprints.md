@@ -55,7 +55,9 @@ phase2_trigger: post-MVP user feedback (Mental Model #9 demand-before-surface)
 - 🟡 Record-lock per ADR-002 §2.5 — if concurrent corruption recurs in MVP
 - 🟡 Approval workflow (steward draft → KTT approve) — if accountability/audit drives demand
 - 🟡 Anomaly detection (5-class) + Telegram WI-105 routing — if data quality drift detected
-- 🟡 Multi-source price priority + VAT integration — if pricing accuracy gap surfaces
+- 🟡 **VAT price lookup button** (per CEO 28/06) — UI button trong MDG-008 NVL + MDG-012 Equipment edit form: steward click "Tìm giá từ VAT data" → MDM queries VatDownload (REQ-017 backend `nqdl_vat_raw.vat_invoice_details` + `nvl_code_crosswalk` per INT-002) → returns matching ncc/ten_hang/don_gia → steward accept/reject → falls back to manual entry if no VAT match. Depends: VatDownload Phase 2.1 sync 50k complete + INT-002 crosswalk populated for relevant NCCs.
+- 🟡 Multi-source price priority (BFLOW_PO > VAT_INVOICE > EXCEL_V2) — if pricing accuracy gap surfaces
+- 🟡 **Bflow 1/2 native API access** (per CEO 28/06: "Bflow đều do chúng ta phát triển" — expose MDM REST API for Bflow integration) — replaces Excel paste workaround for Bflow only (CukCuk + Fast Accounting Online remain Excel/manual paste = external SaaS)
 - 🟡 BFlow 2 sunset prep (Phase 3 carve)
 
 Per L1 govern-proportional: Phase 2 scope decided per @mis trigger + user feedback evidence, NOT pre-planned now.
