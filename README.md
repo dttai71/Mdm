@@ -4,7 +4,7 @@
 **Status**: 00 - FOUNDATION (Design Phase)
 **Updated**: 2026-06-28
 **Sponsor**: CEO Đặng Thế Tài
-**Owners**: @itadmin (orchestrate) · @architect (design) · @cto MTClaw (review) · @coder dtdanh (implement) · @mis (governance) · Thy/Quỳnh/Ms.Hồng (data stewards)
+**Owners**: @itadmin (orchestrate) · @architect (design) · @cto MTClaw (review) · @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) (implement) · @mis (governance) · Thy/Quỳnh/Ms.Hồng (data stewards)
 
 ---
 
@@ -37,7 +37,7 @@ Per [SDLC-Enterprise-Framework README §4-Tier Classification](/home/nqh/shared/
 | Required Stages: 00, 01, 02, 04 | 🟢 scaffolded |
 | README | ✅ this file |
 | .env.example | ✅ `.env.example` |
-| Team 1-2 | ✅ dtdanh primary + em design-coordinator |
+| Team 1-2 | ✅ Ms. Quỳnh primary (per CEO 28/06) + em design-coordinator |
 
 Voluntary additions (per em prior project pattern):
 - `CLAUDE.md` — AI-onboarding (STANDARD+ feature, em include for AI context velocity)
@@ -107,10 +107,10 @@ MVP-lean (on COGS-PASS + ETA-Q4+ ✅)
     ├── 00-foundation/    # WHY?   Vision + Decision Log + sunset clause
     ├── 01-planning/      # WHAT?  PRD MVP-lean + acceptance criteria
     ├── 02-design/        # HOW?   ADRs + schema + engine-review checklist
-    ├── 04-build/         # BUILD: impl handoff to dtdanh (post engine-review PASS)
+    ├── 04-build/         # BUILD: impl handoff to Ms. Quỳnh (post engine-review PASS)
     ├── 05-test/          # ON-DEMAND: verification plan when BUILD triggered
     ├── 06-deploy/        # ON-DEMAND: ops runbook when deploy ready
-    └── 08-collaborate/   # Handoffs (itadmin → architect/dtdanh/Ms.Hồng/Quỳnh/@mis)
+    └── 08-collaborate/   # Handoffs (itadmin → architect/Ms. Quỳnh/Ms.Hồng/Quỳnh/@mis)
 ```
 
 ## Cross-references
@@ -140,4 +140,4 @@ Per Decision Log: cash-consolidation PROCESS + virtual-customer-AR + treasury CA
 
 ## License
 
-Internal NQH project. Not open-source. Code owners: dttai71 (CEO Tài) + ITteam (dtdanh).
+Internal NQH project. Not open-source. Code owners: dttai71 (CEO Tài) + ITteam.

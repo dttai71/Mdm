@@ -98,7 +98,7 @@ DevOps:
 
 ## Discipline Anchors (em CC binding)
 
-- **§R-83 substrate-owner**: dtdanh implements (apps/* substrate); em design + handoff; @mis governance; Ms.Hồng + KTT crosswalk content. Em NOT cross-substrate modify.
+- **§R-83 substrate-owner**: Ms. Quỳnh implements (per CEO 28/06); em design + handoff; @mis governance; Ms.Hồng + KTT crosswalk content. Em NOT cross-substrate modify.
 - **§R-37 invariant**: cost lookup uses transaction_datetime, NEVER now() (extended from COGS pipeline ADR-001)
 - **§R-71 SA discipline**: service account credentials rotation ≤90d, registry entry
 - **§R-82 ext #15**: verify data-presence empirical, NOT assume from column-existence (per `feedback_verify_data_presence_not_just_columns`)
@@ -109,10 +109,10 @@ DevOps:
 ## Build Sequence (post Decision Log)
 
 ```
-1. DESIGN (current): @architect + Quỳnh + em (engine-review checklist draft post @mis green-light)
+1. DESIGN (current): @architect (CEO + em joint) — Ms. Quỳnh NOT participate design (engine-review checklist draft post @mis green-light)
 2. Engine-review (gate): @mis + @cto-CC review checklist + ratify
 3. GATE COGS-PASS + ETA-Q4+ confirm: triggers MVP-lean BUILD
-4. BUILD: dtdanh implements per ratified design (Phase 1 = 7-MDG CRUD + RBAC + costing-engine)
+4. BUILD: Ms. Quỳnh implements per ratified design (Phase 1 = 7-MDG CRUD + RBAC + costing-engine)
 5. TEST: 05-test verification per acceptance criteria
 6. DEPLOY: 06-deploy ops runbook + RBAC config
 7. Sunset to BFlow 2 (post-BFlow-2 GA): port costing-engine + carve Phase 3 to BFlow 2
@@ -126,8 +126,8 @@ DevOps:
 |------|--------|-------|
 | Sponsor | CEO Đặng Thế Tài | Authority |
 | Orchestrator | @itadmin (em) | Design + handoff + cross-team coord |
-| Architect | @architect (TBD assignment) | Stack ratify + ADR authoring |
-| Implementer | @coder dtdanh | Code + DDL + deploy |
+| Architect | @architect (CEO Tài + @itadmin joint per CEO 28/06) | Stack ratify + ADR authoring |
+| Implementer | @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) | Code + DDL + deploy |
 | Reviewer | @cto MTClaw | PR review + design verify |
 | Governance | @mis | Decision Log + scope discipline |
 | Data Stewards | Thy · Quỳnh · Ms.Hồng | Master-data input/maintenance |
