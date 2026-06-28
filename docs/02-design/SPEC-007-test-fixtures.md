@@ -125,7 +125,7 @@ PROVEN_VALUES = {
     'PRD-0034': 8_030,
     'PRD-0181': 8_333,
     'PRD-0325': 25_666,
-    # PRD-0009 Gà Hấp Gừng Rừng — em surface @mis for ground-truth anchor (not in §B-3 table)
+    'PRD-0009': 116_034,   # @mis-confirmed 28/06 (V2 closed gap; engine-method independent recompute matched)
 }
 TOLERANCE = 0.005  # ±0.5% per SPEC-001 §A.7
 

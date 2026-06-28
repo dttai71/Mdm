@@ -290,7 +290,7 @@ PASS REQUIRED per SPEC-001 §A.3
 
 ```
 GIVEN MDM PostgreSQL synced from MASTER-DATA-V2.xlsx (latest)
-GIVEN @mis PROVEN ground-truth: PRD-0173=60,863đ, PRD-0034=8,030đ, PRD-0181=8,333đ, PRD-0325=25,666đ, PRD-0009 (Gà Hấp Gừng Rừng — gaps=0)
+GIVEN @mis PROVEN ground-truth (5/5 empirical confirm 28/06): PRD-0173=60,863đ, PRD-0034=8,030đ, PRD-0181=8,333đ, PRD-0325=25,666đ, **PRD-0009 (Gà Hấp Gừng Rừng) = 116,034đ** (gap closed in V2 per @mis 28/06)
 WHEN OP-1 compute_recipe_cost(prd_code, current_time) for each
 THEN engine output matches PROVEN values within ±0.5% rounding tolerance
 PASS REQUIRED per SPEC-001 §A.7 (Excel-COGS Phase 1 method alignment)

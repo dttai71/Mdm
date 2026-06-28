@@ -120,18 +120,49 @@ DevOps:
 
 ---
 
-## Owner / Roles
+## Owner / Roles (per CEO 28/06 final allocation)
 
-| Role | Person | Scope |
-|------|--------|-------|
-| Sponsor | CEO Đặng Thế Tài | Authority |
-| Orchestrator | @itadmin (em) | Design + handoff + cross-team coord |
-| Architect | @architect (CEO Tài + @itadmin joint per CEO 28/06) | Stack ratify + ADR authoring |
-| Implementer | @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) | Code + DDL + deploy |
-| Reviewer | @cto MTClaw | PR review + design verify |
-| Governance | @mis | Decision Log + scope discipline |
-| Data Stewards | Per MDP SOP roles: Thy (MDG-003) · Ms.Hồng (MDG-002) · KTT + Kế toán Kho (MDG-008/011) · Bếp trưởng (MDG-005) · Hào (MDG-012) · CFO Office (MDG-009) | per SPEC-004 RBAC matrix |
-| Cross-team | @cto BFlow | Sunset coordination |
+| Role | Person/Agent | SE4A/SE4H | Scope |
+|------|---|---|-------|
+| Sponsor | CEO Đặng Thế Tài | SE4H | Authority |
+| **@architect + SE4H** | **CEO Tài** | SE4H | Design + human-engineering authority (per CEO 28/06) |
+| **@architect (joint)** | @itadmin (em) | SE4A | Co-architect with CEO + orchestrator + handoff coord |
+| **@fullstack** | **Ms. Quỳnh** | SE4A leader | LITE-tier consolidation: @coder + @tester + @devops merged (per CEO LITE doctrine 28/06) |
+| **@coder agent** | CC (Claude Code) | SE4A | Parallel code stream — deep context + LOGIC-SPEC interpretation + tests |
+| **@coder agent** | Kimi | SE4A | Parallel code stream — bulk mechanical (DDL→ORM gen + Excel parsing + Vue scaffolding) |
+| **DE (on-demand)** | dtdanh | SE4A | DWH owner — coordinate when MDM↔ClickHouse interop needed (per CEO 28/06) |
+| Reviewer | @cto MTClaw | SE4A | PR review + design verify |
+| Governance | @mis | SE4A | Decision Log + scope discipline + Empirical-verify (RATIFY SPEC-001 28/06) |
+| Data Stewards | Per MDP SOP roles: Thy (MDG-003) · Ms.Hồng (MDG-002) · KTT + Kế toán Kho (MDG-008/011) · Bếp trưởng (MDG-005) · Hào (MDG-012) · CFO Office (MDG-009) | Human | per SPEC-004 RBAC matrix |
+| Cross-team | @cto BFlow | SE4A | Sunset coordination |
+
+### SE4A multi-agent execution model (per CEO 28/06)
+
+For implementation phases (04-build), Ms. Quỳnh leads as @fullstack while orchestrating CC + Kimi parallel agent streams:
+
+```
+[CEO @architect SE4H] ──ratify design──▶
+    │
+    ▼
+[em @architect joint SE4A] ──coordinate + clarify spec──▶
+    │
+    ▼
+[Ms. Quỳnh @fullstack SE4A leader]
+    │ Daily PR review + integrate + acceptance
+    │
+    ├──▶ [CC @coder agent stream A] (foundation + RBAC + engine)
+    ├──▶ [CC @coder agent stream B] (MDG CRUD batch)
+    ├──▶ [Kimi @coder agent stream C] (Excel parser + Vue scaffolding)
+    └──▶ [Kimi @coder agent stream D] (DDL→ORM gen + migrations)
+            │
+            ▼ when DWH interop needed
+    [dtdanh DE on-demand] (apps/clickhouse coordination)
+            │
+            ▼
+[Demo + @cto-CC + @mis sign-off]
+```
+
+LITE tier consolidation: Ms. Quỳnh holds @coder + @tester + @devops as single @fullstack (no role-separation overhead for 1-2 person team).
 
 ---
 

@@ -1,16 +1,30 @@
 ---
 spec_id: SPEC-001
 spec_name: "Durable Costing-Engine LOGIC-SPEC Review Checklist (Language-Agnostic, Port-Ready)"
-spec_version: "1.0.0"
-status: draft
+spec_version: "1.1.0"
+status: RATIFIED
 tier: LITE
 stage: "02"
 category: architecture
-owner: itadmin-orchestrator
+owner: architect-itadmin-ceo-joint
 created: 2026-06-28
 last_updated: 2026-06-28
-authority: "@cto approve green-light pull-forward 28/06; @mis ratify pending"
+authority: "@cto approve green-light pull-forward 28/06; @mis RATIFY 28/06 empirically-backed (5/5 PROVEN values match)"
+ratify_evidence: "@mis independent engine-method reimpl from V2 — 5/5 PRD match: 0173=60863 · 0034=8030 · 0181=8333 · 0325=25666 · 0009=116034"
 ---
+
+## ⚠️ HONEST-CEILING per @mis RATIFY rider #1 (28/06)
+
+This checklist validates **engine-LOGIC correctness** (logic-validate per §A-§G). It does **NOT** signoff **VALUE-correctness** (price/yield audited-correct).
+
+- **What this checklist proves**: engine impl matches @mis-method LOGIC ±0.5% (logic-correct)
+- **What this checklist does NOT prove**: source data (prices/yields) is audited-correct
+- **Value-truth layer** = KTT-materiality-spot-check + VAT-price-loop (per ADR-005 Stage 2) — SEPARATE concern
+- **@mis-PROVEN values = best-available** (DWH-died, manual-recompute) — NOT auditor-confirmed
+- "Engine khớp @mis-values" ≠ "COGS audited-correct"
+
+Engine-review = LOGIC gate only. Production COGS-audit = downstream KTT + VAT-loop scope.
+
 
 # SPEC-001 — Engine-Review Checklist (LOGIC-SPEC scope, port-ready)
 
@@ -33,9 +47,11 @@ Scope = engine LOGIC-SPEC only: formulas, rules, invariants, schemas, audit sema
 
 ## 2. Alignment with Excel-COGS Phase 1 PROVEN method
 
-Per @mis §A0.5 28/06: Phase 1 PROVEN end-to-end with born-clean v2 + cột-H unit-fix → real gross-profit numbers (Cơm Lam 21,970đ 73% · Cá tầm 138,137đ 69% · Rau lẩu 51,667đ 86%).
+Per @mis §A0.5 28/06: Phase 1 PROVEN end-to-end with born-clean v2 + **cột-K (`Don_Gia_Sau_So_Che` — đơn-giá-đúng-đơn-vị post-sơ-chế)** unit-fix → real gross-profit numbers (Cơm Lam 21,970đ 73% · Cá tầm 138,137đ 69% · Rau lẩu 51,667đ 86%).
 
 LOGIC-SPEC MUST encode this proven-method. Any drift from Phase 1 method = checklist FAIL.
+
+> **Per @mis rider #2 (28/06)**: cột-K = `Don_Gia_Sau_So_Che` (đơn giá sau sơ chế) is canonical unit-price. cột-H = đơn-giá-nhập per-kg = the column that CAUSED the 60M-bug if used directly. SPEC-006 §2.1 LOGIC pseudocode correctly uses cột-K (via `don_gia_sau_so_che` field). Em correct §2 prose here per @mis rider #2.
 
 ## 3. Engine-review checklist
 
@@ -60,6 +76,7 @@ LOGIC-SPEC MUST encode this proven-method. Any drift from Phase 1 method = check
 | B.3 | `price_source` enum on price-history rows | EXCEL_SSOT (deprecated) / EXCEL_V2 / BACKFILL_INITIAL / BFLOW_PO / VAT_INVOICE / MANUAL_OVERRIDE per ADR-005 |
 | B.4 | Multi-source priority resolution | When multiple sources have prices overlapping same `(ma_nvl, time)`: priority VAT_INVOICE > EXCEL_V2 > BACKFILL_INITIAL (pre-BFlow 2); BFLOW_PO > VAT_INVOICE (post-BFlow 2) |
 | B.5 | Source-blind query layer | Dashboard/agent queries MUST consume "effective price" view (priority-resolved), NOT depend on source enum value. Test: swap source for same ma_nvl/time → query result unchanged |
+| **B.6** | **LOGIC-correct vs VALUE-correct distinction (per @mis rider #1)** | Checklist validates engine-LOGIC matches @mis-method ±0.5%. Does NOT signoff VALUE-correctness of source prices/yields. Value-truth = KTT-materiality-spot-check + VAT-price-loop (separate layer, per ADR-005 Stage 2). Engine-review PASS ≠ "COGS audited-correct". @bod/reports MUST NOT claim audit-grade COGS based on engine-review PASS alone — only "method-correct per @mis-PROVEN at YYYY-MM-DD" |
 
 ### §C. AUDIT TRAIL
 
