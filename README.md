@@ -4,7 +4,7 @@
 **Status**: 00 - FOUNDATION (Design Phase)
 **Updated**: 2026-06-28
 **Sponsor**: CEO Đặng Thế Tài
-**Owners**: @itadmin (orchestrate) · @architect (design) · @cto MTClaw (review) · @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) (implement) · @mis (governance) · Thy/Quỳnh/Ms.Hồng (data stewards)
+**Owners**: @itadmin (orchestrate) · @architect (design) · @cto MDM = dvhiep (review per CEO 28/06 handoff) · @coder Ms. Quỳnh (per CEO 28/06 — NOT design participant) (implement) · @mis (governance) · Thy/Quỳnh/Ms.Hồng (data stewards)
 
 ---
 
@@ -23,7 +23,7 @@ NQH Master Data Management (MDM) is an **app-bridge MVP-lean** that consolidates
 | Stage | 00 - FOUNDATION |
 | Sprint | 0 - Project scaffolding |
 | Progress | 5% (folder scaffold + initial docs) |
-| Next Gate | G0 (Foundation) → @cto-CC ratify post engine-review checklist |
+| Next Gate | G0 (Foundation) → @cto MDM (dvhiep) ratify post engine-review checklist |
 | Build trigger | 🔴 GATE on COGS-PASS + engine-review PASS |
 
 ---

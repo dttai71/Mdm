@@ -103,7 +103,7 @@ Backend ready for Sprint 2 frontend: 7-MDG CRUD via API + JWT auth + 2-role RBAC
 - [ ] Initial Excel V2 seed populates all 7 MDGs
 - [ ] CI green main (ruff + pytest + Alembic dry-run)
 - [ ] Sprint Review demo: CRUD on 2 MDGs + search 1 MDG + RBAC denial
-- [ ] @cto-CC + @mis sign-off → Sprint 2 unblocked
+- [ ] @cto MDM (dvhiep) + @mis sign-off → Sprint 2 unblocked
 
 ## Out of scope Sprint 1 (Phase 2 ON-DEMAND)
 

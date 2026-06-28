@@ -133,7 +133,7 @@ Per L1 govern-proportional: Phase 2 scope decided per @mis trigger + user feedba
 - [ ] Stewards (Thy + Hồng + 1 other) complete day-in-life CRUD tasks via UI unaided
 - [ ] Staff (≥1 NV volunteer) finds MD codes via search + copies to CukCuk/Fast/Bflow 1
 - [ ] MDM deployed on S2 LXC accessible via internal URL
-- [ ] **MVP DEMO** Friday Sprint 2 — CEO + @cto-CC + @mis sign-off
+- [ ] **MVP DEMO** Friday Sprint 2 — CEO + @cto MDM (dvhiep) + @mis sign-off
 - [ ] User feedback form distributed (3-question: easier? faster? missing?)
 
 ## Phase 2 trigger criteria (post-MVP)

@@ -144,7 +144,7 @@ LOGIC-SPEC MUST encode this proven-method. Any drift from Phase 1 method = check
 3. dtdanh / Ms. Quỳnh implements per LOGIC-SPEC
 4. Engine-review session: @cto + @mis + em walk through §A-§G against implementation (live test scenarios)
 5. Per-item PASS/FAIL recorded at `05-test/engine-review-evidence-YYYY-MM-DD.md`
-6. PASS verdict → @cto-CC sign-off → BUILD unlocks
+6. PASS verdict → @cto MDM (dvhiep) sign-off → BUILD unlocks
 7. FAIL verdict → defect log → fix cycle → re-review
 
 ## 6. References

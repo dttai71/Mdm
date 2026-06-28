@@ -109,7 +109,7 @@ MVP DEMO ready: Stewards (Thy/Hồng) manage master-data via web UI (replace raw
 - [ ] MDM deployed on S2 LXC + internal URL accessible
 - [ ] Drive daily poll cron runs cleanly 2+ days
 - [ ] Telegram alert wire functional (test failure → NQH-Ops-Team delivered)
-- [ ] **MVP DEMO** Friday — CEO + @cto-CC + @mis sign-off
+- [ ] **MVP DEMO** Friday — CEO + @cto MDM (dvhiep) + @mis sign-off
 - [ ] Feedback form distributed + first responses collected
 
 ## Out of scope Sprint 2 (Phase 2 ON-DEMAND)

@@ -110,7 +110,7 @@ DevOps:
 
 ```
 1. DESIGN (current): @architect (CEO + em joint) — Ms. Quỳnh NOT participate design (engine-review checklist draft post @mis green-light)
-2. Engine-review (gate): @mis + @cto-CC review checklist + ratify
+2. Engine-review (gate): @mis + @cto MDM (dvhiep) review checklist + ratify
 3. GATE COGS-PASS + ETA-Q4+ confirm: triggers MVP-lean BUILD
 4. BUILD: Ms. Quỳnh implements per ratified design (Phase 1 = 7-MDG CRUD + RBAC + costing-engine)
 5. TEST: 05-test verification per acceptance criteria
@@ -131,7 +131,7 @@ DevOps:
 | **@coder agent** | CC (Claude Code) | SE4A | Parallel code stream — deep context + LOGIC-SPEC interpretation + tests |
 | **@coder agent** | Kimi | SE4A | Parallel code stream — bulk mechanical (DDL→ORM gen + Excel parsing + Vue scaffolding) |
 | **DE (on-demand)** | dtdanh | SE4A | DWH owner — coordinate when MDM↔ClickHouse interop needed (per CEO 28/06) |
-| Reviewer | @cto MTClaw | SE4A | PR review + design verify |
+| **Reviewer (Project @cto)** | **dvhiep** — CIO + IT Admin (CEO 28/06 handoff per `project_master_data_ownership`) | SE4A | PR review + design verify + governance with @mis + project execution leader |
 | Governance | @mis | SE4A | Decision Log + scope discipline + Empirical-verify (RATIFY SPEC-001 28/06) |
 | Data Stewards | Per MDP SOP roles: Thy (MDG-003) · Ms.Hồng (MDG-002) · KTT + Kế toán Kho (MDG-008/011) · Bếp trưởng (MDG-005) · Hào (MDG-012) · CFO Office (MDG-009) | Human | per SPEC-004 RBAC matrix |
 | Cross-team | @cto BFlow | SE4A | Sunset coordination |
@@ -159,7 +159,7 @@ For implementation phases (04-build), Ms. Quỳnh leads as @fullstack while orch
     [dtdanh DE on-demand] (apps/clickhouse coordination)
             │
             ▼
-[Demo + @cto-CC + @mis sign-off]
+[Demo + @cto MDM (dvhiep) + @mis sign-off]
 ```
 
 LITE tier consolidation: Ms. Quỳnh holds @coder + @tester + @devops as single @fullstack (no role-separation overhead for 1-2 person team).
