@@ -64,7 +64,7 @@ Backend ready for Sprint 2 frontend: 7-MDG CRUD via API + JWT auth + 2-role RBAC
 
 ### Stream D — MDG-005/009/011/012 CRUD (Kimi, ~24h)
 4 MDGs uniform pattern (replicate Stream C):
-- MDG-005 BTP (+ `yield_qty` + `yield_uom` — CRITICAL per @cto §C.4)
+- MDG-005 BTP (+ `yield_qty` + `yield_uom` + `don_gia_sau_che_bien` — CRITICAL per @cto §C.4 + @mis rider #3 29/06; Excel-authoritative interim, engine yield-divide = VALIDATION pattern only)
 - MDG-009 Customer (+ PDPL 2025 consent fields)
 - MDG-011 Cost master
 - MDG-012 Equipment (+ TSCĐ/CCDC enum)
