@@ -146,7 +146,21 @@ G: Dinh_Luong            → mdg_005_btp_recipe.dinh_luong
 H: Don_Gia_Thanh_Phan    → (NOT stored directly — recomputed from mdg_008_nvl.don_gia_sau_so_che)
 L: Tong_Dinh_Luong_TP    → mdg_005_btp.yield_qty  ⭐ CRITICAL (per @cto §C.4, anti-40%-error)
 M: DVT_TP                → mdg_005_btp.yield_uom
+N: Don_Gia_Sau_Che_Bien  → mdg_005_btp.don_gia_sau_che_bien  ⭐ UNIT-PRICE-FACT (per @mis rider #3 29/06; parallel role với NVL cột-K)
 ```
+
+**@mis rider #3 (29/06) — 3 columns Kimi đang import vào V2 (handoff 7abd463e):**
+
+| V2 column added | Source col | Role |
+|---|---|---|
+| `Tong_Dinh_Luong_Thanh_Pham` | L | `yield_qty` (chia) |
+| `DVT_Thanh_Pham` | M | `yield_uom` |
+| `Don_Gia_Sau_Che_Bien` | N | BTP unit-cost-fact (= K÷L sanity, parallel với NVL cột-K) |
+
+**Authoritative chain (interim Phase 1):**
+- BTP cost lookup → use `mdg_005_btp.don_gia_sau_che_bien` direct (Excel-authoritative)
+- Engine yield-divide compute → VALIDATION pattern (assert engine_recompute ≈ Excel cột-N ±tolerance)
+- Phase 2 OR Excel cột-N stale → engine compute via full yield-divide (per SPEC-006 §6.2)
 
 **Parser convention (per 29/06 empirical verify source `Định lượng BTP`)**: cột L+M values appear ONLY on the FIRST row of each BTP group (e.g. INT-0006 yield=1200gr in header row; subsequent component rows L12+ = NULL). Parser MUST:
 1. Read L+M from header row → write ONCE to `mdg_005_btp.yield_qty + yield_uom` per BTP

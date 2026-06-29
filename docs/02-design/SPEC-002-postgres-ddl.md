@@ -196,7 +196,7 @@ CREATE TABLE mdg_005_btp (
     dvt                 TEXT NOT NULL,
     yield_qty           DECIMAL(15,4),                -- CỘT L Excel V2 (CRITICAL per @mis §C.4)
     yield_uom           TEXT,                         -- CỘT M Excel V2
-    don_gia_sau_che_bien DECIMAL(18,2),               -- pre-computed cache, recompute trigger when components/yield change
+    don_gia_sau_che_bien DECIMAL(18,2),               -- cột N Excel V2 (per @mis rider #3 29/06) = BTP unit-price-FACT authoritative interim. Don_Gia_Sau_Che_Bien ≈ K÷L (sanity validate). Engine yield-divide compute = VALIDATION OR Phase 2 fallback if Excel cột-N stale.
     is_active           BOOLEAN NOT NULL DEFAULT TRUE,
     source_system       TEXT NOT NULL DEFAULT 'MDM',
     created_at          TIMESTAMP NOT NULL DEFAULT now(),
