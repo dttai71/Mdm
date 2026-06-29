@@ -53,6 +53,8 @@ LOGIC-SPEC MUST encode this proven-method. Any drift from Phase 1 method = check
 
 > **Per @mis rider #2 (28/06)**: cột-K = `Don_Gia_Sau_So_Che` (đơn giá sau sơ chế) is canonical unit-price. cột-H = đơn-giá-nhập per-kg = the column that CAUSED the 60M-bug if used directly. SPEC-006 §2.1 LOGIC pseudocode correctly uses cột-K (via `don_gia_sau_so_che` field). Em correct §2 prose here per @mis rider #2.
 
+> **Per @mis + CEO rider #3 (29/06) — Recipe_BTP cột L+M empirical gap closure**: Sheet `Định lượng BTP` source (`core/docs/10-Temporary/Master Data NVL.xlsx`) verified — col L=`Tổng Định lượng thành phẩm` (yield_qty) + col M=`DVT thành phẩm` (yield_uom) PRESENT in header-row-per-BTP-group pattern (e.g. INT-0006 Bò một nắng muối kiến vàng: yield=1200gr in row L11; component rows L12+ NULL). MASTER-DATA-V2.xlsx Recipe_BTP previously MISSING these columns — Kimi 29/06 import closes gap. SPEC-002 §mdg_005_btp (yield_qty + yield_uom) + SPEC-005 §3.2 (L+M mapping) + SPEC-006 §6.2 (BTP yield divide test INT-TEST-001) ALL canonical pre-update — design assumed columns exist. **Parser convention**: yield in HEADER ROW of each BTP group only; parser MUST propagate header-down OR store `mdg_005_btp.yield_qty` once per BTP (per DDL design — correct pattern). NULL yield on any BTP → anomaly `RECIPE_INVALID_REF (yield missing)` per SPEC-006 §6.2 leaf-stop pattern.
+
 ## 3. Engine-review checklist
 
 ### §A. CORRECTNESS INVARIANTS

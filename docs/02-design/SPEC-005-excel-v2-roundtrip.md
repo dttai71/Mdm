@@ -148,6 +148,13 @@ L: Tong_Dinh_Luong_TP    → mdg_005_btp.yield_qty  ⭐ CRITICAL (per @cto §C.4
 M: DVT_TP                → mdg_005_btp.yield_uom
 ```
 
+**Parser convention (per 29/06 empirical verify source `Định lượng BTP`)**: cột L+M values appear ONLY on the FIRST row of each BTP group (e.g. INT-0006 yield=1200gr in header row; subsequent component rows L12+ = NULL). Parser MUST:
+1. Read L+M from header row → write ONCE to `mdg_005_btp.yield_qty + yield_uom` per BTP
+2. Skip L+M on subsequent component rows (already captured)
+3. Validate: every distinct `ma_btp` MUST have exactly 1 row with non-NULL L+M; if missing → emit anomaly `RECIPE_INVALID_REF (yield missing)` per SPEC-006 §6.2 BTP-yield test gate
+
+This convention matches `mdg_005_btp` 1:N `mdg_005_btp_recipe` DDL design (SPEC-002 §mdg_005_btp).
+
 ### 3.3 Recipe_Mon_BOM
 
 ```
