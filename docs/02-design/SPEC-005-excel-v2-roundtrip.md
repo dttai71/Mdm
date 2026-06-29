@@ -144,10 +144,12 @@ E: Ten_Thanh_Phan        → (auto-fetched from mdg_008_nvl.ten_nvl, not stored)
 F: DVT                   → mdg_005_btp_recipe.dvt
 G: Dinh_Luong            → mdg_005_btp_recipe.dinh_luong
 H: Don_Gia_Thanh_Phan    → (NOT stored directly — recomputed from mdg_008_nvl.don_gia_sau_so_che)
-L: Tong_Dinh_Luong_TP    → mdg_005_btp.yield_qty  ⭐ CRITICAL (per @cto §C.4, anti-40%-error)
-M: DVT_TP                → mdg_005_btp.yield_uom
-N: Don_Gia_Sau_Che_Bien  → mdg_005_btp.don_gia_sau_che_bien  ⭐ UNIT-PRICE-FACT (per @mis rider #3 29/06; parallel role với NVL cột-K)
+J: Tong_Dinh_Luong_Thanh_Pham → mdg_005_btp.yield_qty   ⭐ CRITICAL (per @cto §C.4, anti-40%-error)
+K: DVT_Thanh_Pham             → mdg_005_btp.yield_uom
+L: Don_Gia_Sau_Che_Bien       → mdg_005_btp.don_gia_sau_che_bien  ⭐ UNIT-PRICE-FACT (per @mis rider #3 29/06; parallel NVL cột-K)
 ```
+
+⚠️ **Positional drift V2 vs source — empirically verified 29/06 (post-Kimi-import)**: V2 Recipe_BTP has 12 cols (A-L). The 3 yield/price cols land at J/K/L (NOT L/M/N as in source `Định lượng BTP`). Source has additional rollup cols (Thành tiền, Tổng Chi Phí) between H and the yield-block; V2 omits these (per @mis "FLATTEN value, drop derived J/K" handoff guardrail). Parser MUST use V2 positions J/K/L, NOT source positions L/M/N.
 
 **@mis rider #3 (29/06) — 3 columns Kimi đang import vào V2 (handoff 7abd463e):**
 
