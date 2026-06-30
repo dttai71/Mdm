@@ -32,7 +32,7 @@ Em verified via openpyxl 28/06. Tabs to ingest (active 7 MDGs + 3 ref + aux):
 | `MDG-012_Equipment` | `mdg_012_equipment` | |
 | `CON_Consumables` | `mdg_008_nvl` (with `muc_so_che='CON'`) | 168 rows — store in NVL with CON marker |
 | `PKG_Packaging` | `mdg_008_nvl` (with `muc_so_che='CON'` + cat='PKG') | OR separate table if business distinct (em recommend merge per @cto sharpening) |
-| `Recipe_SoChe` | `mdg_008_nvl` (PRE rows joined to RAW via `ma_nvl_goc`) | **cột H = `don_gia_sau_so_che`** (canonical interim price source per ADR-005 EXCEL_V2) |
+| `Recipe_SoChe` | `mdg_008_nvl` (PRE rows joined to RAW via `ma_nvl_goc`) | **cột H = `don_gia_sau_so_che`** — FALLBACK only (per dtdanh empirical 30/06 + ADR-005 multi-source priority): primary price source = `fact_nvl_price_history` (VAT_INVOICE live + future BFLOW_PO). Excel cột-H used ONLY when no live price exists for that NVL at transaction_datetime |
 | `Recipe_BTP` | `mdg_005_btp_recipe` + `mdg_005_btp` (yield_qty header) | **cột H = `don_gia_thanh_phan`** (BTP component price); yield_qty in `Recipe_BTP` header section |
 | `Recipe_Mon_BOM` | `mdg_recipe_mon_bom` | PRD→component (PRE/RTU/INT/CON/PRD combo) |
 | `MDG-002_Supplier` already listed | | |
@@ -126,7 +126,7 @@ D: Muc_So_Che            → mdg_008_nvl.muc_so_che (THO/INT/SC)
 E: DVT_Nhap              → mdg_008_nvl.dvt_mua
 F: DVT_Quy_Doi           → mdg_008_nvl.dvt_xuat
 G: Ty_Le_Yield           → mdg_008_nvl.ty_le_yield
-H: Don_Gia_Sau_So_Che    → mdg_008_nvl.don_gia_sau_so_che  ⭐ CRITICAL price col (per ADR-005)
+H: Don_Gia_Sau_So_Che    → mdg_008_nvl.don_gia_sau_so_che  (FALLBACK only — primary = fact_nvl_price_history.don_gia where price_source ∈ VAT_INVOICE/BFLOW_PO at transaction_datetime; per dtdanh empirical 30/06 §R-83)
 I: Trang_Thai            → mdg_008_nvl.is_active
 ```
 
